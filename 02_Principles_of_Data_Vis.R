@@ -100,3 +100,15 @@ ggplot(
   geom_col() +
   scale_fill_viridis_c() +
   theme_minimal()
+
+
+
+## Drought Visualization
+
+library(rio)
+
+dm_perc_cat_hubs_raw <- import("https://data.rwithoutstatistics.com/dm_export_20000101_20210909_perc_cat_hubs.json")
+
+southwest_2003 <- dm_perc_cat_hubs %>%
+  filter(hub == "Southwest") %>%
+  filter(year == 2003)
